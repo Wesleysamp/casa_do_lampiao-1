@@ -7,7 +7,6 @@ $sql = "SELECT c.id, c.nome, c.descricao, c.preco, cat.nome AS categoria
 
 $result = $conn->query($sql);
 
-
 ?>
 
 <head>
