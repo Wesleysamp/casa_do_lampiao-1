@@ -3,231 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/index.css">
   <title>Casa do Lampião</title>
-  <style>
-    :root {
-      --accent: #c75a00;
-      --accent-dark: #a54a00;
-      --muted: #666;
-      --bg: #faf7f3;
-      --card: #fff;
-      --maxw: 1100px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: #333;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      background-image: url("https://i.pinimg.com/1200x/3e/33/1e/3e331e30d5707e8113a8f9284e986d09.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-    }
-
-    .container {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ===== HEADER ===== */
-    .site-header {
-      background-color: var(--accent);
-      color: white;
-      text-align: center;
-      padding: 12px 0;
-      position: relative;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      width: 100%;
-      z-index: 10;
-    }
-
-    .restaurant-title {
-      font-size: 2rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    /* ===== MENU HAMBÚRGUER ===== */
-    .menu-toggle {
-      position: absolute;
-      left: 20px;
-      top: 14px;
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* ===== NAV ===== */
-    nav.main {
-      background: white;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      position: absolute;
-      top: 50px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.4s ease;
-      z-index: 9;
-    }
-
-    nav.main.show {
-      max-height: 200px;
-    }
-
-    .tab-btn {
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1rem;
-      padding: 15px;
-      width: 100%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .tab-btn:hover {
-      background: var(--bg);
-    }
-
-    /* ===== CARDS ===== */
-    .cards-section {
-      margin: 50px 0;
-      text-align: center; /* Centraliza o título e os cards */
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      color: #fff; /* texto branco */
-      background-color: var(--accent); /* fundo laranja */
-      display: inline-block;
-      padding: 10px 25px;
-      border: 1px solid #000; /* borda preta fina */
-      border-radius: 8px;
-      text-align: center;
-      margin: 0 auto 25px auto; /* centraliza e dá espaçamento abaixo */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background-color: var(--card);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .card-image {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    .card-description {
-      color: var(--muted);
-      margin-bottom: 15px;
-    }
-
-    .card-button {
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .card-button:hover {
-      background-color: var(--accent-dark);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: var(--accent);
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
-      margin-top: 40px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    footer p {
-      margin: 5px 0;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .restaurant-title {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -252,7 +29,7 @@
 
   <div class="container">
     <section class="cards-section">
-      <h2 class="section-title">Nossos Serviços</h2>
+      <h2>Nossos Serviços</h2>
       <div class="cards-container">
         <div class="card" onclick="window.location.href='../cardapio/index.php'">
           <div class="card-image" style="background-image: url('https://i.pinimg.com/736x/d4/3e/0f/d43e0f98e91801c0c5484e2c9c8c8384.jpg')"></div>
@@ -285,10 +62,10 @@
   </div>
 
   <footer>
-    <p>Rua do Cangaço, 191 — Recife, PE</p>
-    <p>Seg a Dom: 11h às 23h</p>
-    <p>(81) 4002-8922 • contato@casadolampiao.com</p>
-    <p>© Casa do Lampião — 2025</p>
+    <p>Rua do Cangaço, 191 — Recife, PE<
+    Seg a Dom: 11h às 23h
+    (81) 4002-8922 • contato@casadolampiao.com
+    <© Casa do Lampião — 2025</p>
   </footer>
 
   <script>

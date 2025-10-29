@@ -1,219 +1,237 @@
-/* Estilo para Cardápio Nordestino */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5e9d7;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4b78c" opacity="0.1" width="100" height="100"/></svg>');
+:root {
+    --accent: #c75a00;
+    --accent-dark: #a54a00;
+    --muted: #666;
+    --bg: #faf7f3;
+    --card: #fff;
+    --maxw: 1100px;
+  }
+
+  * {
     margin: 0;
-    padding: 20px;
-    color: #5c3d2e;
-}
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 
 h2 {
     text-align: center;
-    color: #8b4513;
+    border: 1px #ffffff;
+    color: #ffffff;
     font-size: 2.5em;
     margin-bottom: 30px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
     border-bottom: 3px solid #d2691e;
     padding-bottom: 10px;
     font-weight: bold;
+
 }
 
-/* Link de adicionar novo prato */
-a[href="criar.php"] {
-    display: inline-block;
-    background: linear-gradient(135deg, #d2691e, #8b4513);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
-}
-
-a[href="criar.php"]:hover {
-    background: linear-gradient(135deg, #8b4513, #5c3d2e);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
-}
-
-/* Tabela do cardápio */
-table {
+  body {
+    background-color: var(--bg);
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100%;
     width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
-    margin-bottom: 30px;
-}
+    background-image: url("https://i.pinimg.com/1200x/3e/33/1e/3e331e30d5707e8113a8f9284e986d09.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
 
-/* Cabeçalho da tabela */
-th {
-    background: linear-gradient(135deg, #8b4513, #a0522d);
-    color: #f5e9d7;
-    padding: 20px 15px;
-    text-align: left;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.1em;
-    border: none;
-}
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-/* Linhas da tabela */
-tr:nth-child(even) {
-    background-color: #faf3eb;
-}
-
-tr:nth-child(odd) {
-    background-color: #fffaf0;
-}
-
-tr:hover {
-    background-color: #f0e6d2;
-    transform: scale(1.01);
-    transition: all 0.2s ease;
-}
-
-/* Células da tabela */
-td {
-    padding: 18px 15px;
-    border-bottom: 1px solid #e8d5b7;
-    color: #5c3d2e;
-    font-size: 1em;
-}
-
-/* Estilo para o nome do prato */
-td:first-child {
-    font-weight: bold;
-    color: #8b4513;
-    font-size: 1.1em;
-}
-
-/* Estilo para o preço */
-td:nth-child(3) {
-    font-weight: bold;
-    color: #d2691e;
-    font-size: 1.1em;
-}
-
-/* Estilo para a categoria */
-td:nth-child(4) {
-    font-style: italic;
-    color: #a0522d;
-}
-
-/* Links de ação */
-td:last-child a {
-    color: #8b4513;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    margin: 0 5px;
-    display: inline-block;
-}
-
-/* Link Editar */
-td:last-child a:first-child {
-    background-color: #f0e6d2;
-    border: 2px solid #d2691e;
-}
-
-td:last-child a:first-child:hover {
-    background-color: #d2691e;
+  /* ===== HEADER ===== */
+  .site-header {
+    background-color: var(--accent);
     color: white;
-}
+    text-align: center;
+    padding: 12px 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    z-index: 10;
+  }
 
-/* Link Excluir */
-td:last-child a:last-child {
-    background-color: #f8e8e8;
-    border: 2px solid #cd5c5c;
-    color: #cd5c5c;
-}
+  .restaurant-title {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  }
 
-td:last-child a:last-child:hover {
-    background-color: #cd5c5c;
-    color: white;
-}
-
-/* Separador entre links */
-td:last-child a:first-child::after {
-    content: "|";
-    margin-left: 10px;
-    color: #d4b78c;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    table {
-        font-size: 0.9em;
-    }
-    
-    th, td {
-        padding: 12px 8px;
-    }
-    
-    h2 {
-        font-size: 2em;
-    }
-    
-    td:last-child a {
-        padding: 6px 10px;
-        font-size: 0.9em;
-    }
-}
-
-/* Efeito de borda decorativa */
-table::before {
-    content: "";
+  /* ===== MENU HAMBÚRGUER ===== */
+  .menu-toggle {
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, #d2691e, #8b4513, #d2691e);
-    border-radius: 20px;
-    z-index: -1;
-    opacity: 0.1;
-}
+    left: 20px;
+    top: 14px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-/* Animação de entrada */
-tr {
-    animation: fadeIn 0.5s ease-in-out;
-}
+  .menu-toggle span {
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* ===== NAV ===== */
+  nav.main {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    z-index: 9;
+  }
+
+  nav.main.show {
+    max-height: 200px;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .tab-btn:hover {
+    background: var(--bg);
+  }
+
+  /* ===== CARDS ===== */
+  .cards-section {
+    margin: 50px 0;
+    text-align: center; /* Centraliza o título e os cards */
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: #fff; /* texto branco */
+    background-color: var(--accent); /* fundo laranja */
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #000; /* borda preta fina */
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 auto 25px auto; /* centraliza e dá espaçamento abaixo */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .card {
+    background-color: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+  }
+
+  .card-description {
+    color: var(--muted);
+    margin-bottom: 15px;
+  }
+
+  .card-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-button:hover {
+    background-color: var(--accent-dark);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .restaurant-title {
+      font-size: 1.6rem;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Estilo para o preço com destaque */
-td:nth-child(3)::before {
-    content: "💰 ";
-    font-size: 0.9em;
-}
-
-/* Destaque para a descrição */
-td:nth-child(2) {
-    font-style: italic;
-    color: #7a5c3c;
-}
+  }
