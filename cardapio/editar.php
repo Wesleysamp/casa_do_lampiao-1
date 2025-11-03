@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST['preco'];
     $categoria_id = $_POST['categoria_id'];
 
-    $sql = "UPDATE cardapio SET nome='$nome', descricao='$descricao', preco='$preco', categoria_id='$categoria_id' 
+    $sql = "UPDATE pratos SET nome='$nome', descricao='$descricao', preco='$preco', categoria_id='$categoria_id' 
             WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$prato = $conn->query("SELECT * FROM cardapio WHERE id=$id")->fetch_assoc();
+$prato = $conn->query("SELECT * FROM pratos WHERE id=$id")->fetch_assoc();
 $categorias = $conn->query("SELECT * FROM categorias");
 ?>
 

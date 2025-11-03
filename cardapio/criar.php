@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST['preco'];
     $categoria_id = $_POST['categoria_id'];
 
-    $sql = "INSERT INTO cardapio (nome, descricao, preco, categoria_id)
+    $sql = "INSERT INTO pratos (nome, descricao, preco, categoria_id)
             VALUES ('$nome', '$descricao', '$preco', '$categoria_id')";
 
     if (mysqli_query($conn, $sql)) {

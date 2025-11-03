@@ -1,9 +1,9 @@
 <?php
 include "../conexao/conexao.php";
 
-$sql = "SELECT c.id, c.nome, c.descricao, c.preco, cat.nome AS categoria 
-        FROM cardapio c
-        JOIN categorias cat ON c.categoria_id = cat.id";
+$sql = "SELECT p.id, p.nome, p.descricao, p.preco, cat.nome AS categoria 
+        FROM pratos p
+        JOIN categorias cat ON p.categoria_id = cat.id";
 
 $result = $conn->query($sql);
 
@@ -13,10 +13,10 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa do Lampião</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bebidas.css">
 </head>
 
-<h2>Cardápio</h2>
+<h2>Pratos</h2>
 <a href="criar.php">Adicionar Novo Prato</a>
 
 <table border="1" cellpadding="10">

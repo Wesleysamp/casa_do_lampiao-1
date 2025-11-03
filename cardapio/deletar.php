@@ -1,5 +1,5 @@
 <?php 
 include "../conexao/conexao.php";
-$conn->query("DELETE FROM cardapio WHERE id = ".$_GET['id']);
+$conn->query("DELETE FROM pratos WHERE id = ".$_GET['id']);
 header("location:index.php");
 ?>

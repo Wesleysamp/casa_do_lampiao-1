@@ -38,7 +38,7 @@ INSERT INTO categorias (nome) VALUES
 ('Sobremesa');
 
 -- Tabela cardápio alimentos
-CREATE TABLE cardapio (
+CREATE TABLE pratos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     descricao TEXT,
@@ -49,7 +49,7 @@ CREATE TABLE cardapio (
 );
 
 -- Alimentos do cardápio
-INSERT INTO cardapio (nome, descricao, preco, imagem, categoria_id) VALUES
+INSERT INTO pratos (nome, descricao, preco, imagem, categoria_id) VALUES
 -- Entradas
 ('Cuscuz com Ovo', 'Cuscuz nordestino com ovo frito e manteiga de garrafa.', 14.90, 'cuscuz.jpg', 1),
 ('Bolinho de Macaxeira com Queijo Coalho', 'Bolinho frito crocante recheado com queijo.', 16.00, 'bolinho_macaxeira.jpg', 1),
@@ -152,11 +152,11 @@ CREATE TABLE pedidos (
 CREATE TABLE itens_pedido (
     id INT PRIMARY KEY AUTO_INCREMENT,
     pedido_id INT,
-    cardapio_id INT,
+    pratos_id INT,
     quantidade INT,
     preco_unitario DECIMAL(10,2),
     FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
-    FOREIGN KEY (cardapio_id) REFERENCES cardapio(id)
+    FOREIGN KEY (pratos_id) REFERENCES pratos(id)
 );
 
 -- Itens do pedido: bebidas
@@ -174,12 +174,12 @@ CREATE TABLE itens_bebida (
 CREATE TABLE avaliacoes (
     id INT PRIMARY KEY AUTO_INCREMENT,
     cliente_id INT,
-    cardapio_id INT,
+    pratos_id INT,
     nota INT CHECK(nota BETWEEN 1 AND 5),
     comentario TEXT,
     data_avaliacao DATE,
     FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (cardapio_id) REFERENCES cardapio(id)
+    FOREIGN KEY (pratos_id) REFERENCES pratos(id)
 );
 
 -- Tabela usuários admin (para login no painel de administração)
