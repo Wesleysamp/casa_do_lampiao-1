@@ -42,8 +42,8 @@ body {
             box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
         }
         /*Voltar ----- precisa arrumar*/
-        a[href="../html/index.php"] {
-            display: inline-block;
+        .voltar {
+            display: flex;
             background: linear-gradient(135deg, #d2691e, #8b4513);
             color: white;
             padding: 12px 25px;
@@ -55,9 +55,11 @@ body {
             letter-spacing: 1px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+            float: right;
+
         }
 
-        a[href="../html/index.php"]:hover {
+        .voltar:hover {
             background: linear-gradient(135deg, #8b4513, #5c3d2e);
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
@@ -207,6 +209,6 @@ body {
 
         /* Estilo para o preço com destaque */
         td:nth-child(3)::before {
-            content: "💰 ";
+            content: "💰";
             font-size: 0.9em;
         }

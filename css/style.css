@@ -225,3 +225,27 @@ footer {
         position: relative;
     }
 }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            td:last-child a {
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
+        }

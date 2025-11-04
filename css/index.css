@@ -109,7 +109,7 @@ h2 {
     background: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     position: absolute;
-    top: 8%;
+    top: 10%;
     left: 0;
     right: 0;
     text-align: center;
@@ -141,7 +141,7 @@ h2 {
 
   /* ===== CARDS ===== */
   .cards-section {
-    margin: 100px 0;
+    margin: 1% 0;
     text-align: center; /* Centraliza o título e os cards */
   }
 
@@ -239,3 +239,27 @@ h2 {
       font-size: 1.6rem;
     }
   }
+
+          /* Responsividade */
+          @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            td:last-child a {
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
+        }

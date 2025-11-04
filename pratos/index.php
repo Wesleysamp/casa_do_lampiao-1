@@ -1,14 +1,12 @@
 <?php
 include "../conexao/conexao.php";
 
-// Query corrigida
-$sql = "SELECT b.id, b.nome, b.descricao, b.preco, cb.nome AS categoria 
-        FROM bebidas b
-        JOIN categorias_bebidas cb ON b.categoria_id = cb.id";
+$sql = "SELECT p.id, p.nome, p.descricao, p.preco, cat.nome AS categoria 
+        FROM pratos p
+        JOIN categorias cat ON p.categoria_id = cat.id";
 
 $result = $conn->query($sql);
 
-// Verifica se houve erro na query
 if (!$result) {
     die("Erro na consulta: " . $conn->error);
 }
@@ -16,18 +14,18 @@ if (!$result) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa do Lampião - Bebidas</title>
+    <title>Casa do Lampião - Pratos</title>
     <link rel="stylesheet" href="../css/styles.css">
-
 </head>
 
 <body>
-    <h2>Bebidas</h2>
-    <a href="criar.php">Adicionar Nova Bebida</a>
-    <a class="voltar" href="../html/index.html">Voltar</a>
+    <h2>Pratos</h2>
+    <a href="criar.php">Adicionar Novo Prato</a>
+    <a class="voltar" href="../html/index.html">Voltar</a> 
 
     <table border="1" cellpadding="10">
         <tr>
@@ -49,13 +47,13 @@ if (!$result) {
             <td><?= htmlspecialchars($row['categoria']) ?></td>
             <td>
                 <a href="editar.php?id=<?= $row['id'] ?>">Editar</a> | 
-                <a href="deletar.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja excluir esta bebida?')">Excluir</a>
+                <a href="deletar.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja excluir este prato?')">Excluir</a>
             </td>
         </tr>
         <?php 
-            endwhile;
+            endwhile; 
         } else {
-            echo "<tr><td colspan='5' style='text-align: center;'>Nenhuma bebida encontrada.</td></tr>";
+            echo "<tr><td colspan='5' style='text-align: center;'>Nenhum prato encontrada.</td></tr>";
         }
         ?>
     </table>

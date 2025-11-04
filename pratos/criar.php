@@ -21,10 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $categorias = mysqli_query($conn, "SELECT * FROM categorias");
 ?>
 
-<head>
-<link rel="stylesheet" href="../css/styles.css">
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa do Lampião - Pratos</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
+<body>
+
 <h2>Adicionar Novo Prato</h2>
 <form method="POST">
     <label>Nome:</label><br>
@@ -45,3 +53,6 @@ $categorias = mysqli_query($conn, "SELECT * FROM categorias");
 
     <button type="submit">Salvar</button>
 </form>
+</body>
+</html>
+
