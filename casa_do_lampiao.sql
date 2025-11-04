@@ -103,20 +103,6 @@ INSERT INTO bebidas (nome, descricao, preco, imagem, categoria_id) VALUES
 ('Cachaça Artesanal do Sertão', 'Dose de cachaça regional.', 9.00, 'cachaca.jpg', 4),
 ('Água de Coco', 'Servida na própria fruta.', 5.00, 'agua_coco.jpg', 5);
 
--- Tabela funcionários
-CREATE TABLE funcionarios (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100),
-    cargo VARCHAR(50),
-    telefone VARCHAR(20),
-    email VARCHAR(100),
-    data_contratacao DATE
-);
-
-INSERT INTO funcionarios (nome, cargo, telefone, email, data_contratacao) VALUES
-('Luiz inácio', 'Garçom', '(81) 91234-5678', 'luiz@casadolampiao.com', '2023-01-15'),
-('Dilma Rouseuff', 'Cozinheira', '(81) 92345-6789', 'Dilma@casadolampiao.com', '2022-11-10'),
-('Getulio vargas', 'Gerente', '(81) 93456-7890', 'getulio@casadolampiao.com', '2021-05-01');
 
 -- Tabela clientes
 CREATE TABLE clientes (
@@ -127,16 +113,6 @@ CREATE TABLE clientes (
     data_cadastro DATE
 );
 
--- Tabela reservas
-CREATE TABLE reservas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT,
-    data_reserva DATE,
-    hora TIME,
-    quantidade_pessoas INT,
-    observacoes TEXT,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
-);
 
 -- Tabela pedidos
 CREATE TABLE pedidos (
