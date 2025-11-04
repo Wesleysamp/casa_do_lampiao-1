@@ -1,306 +1,212 @@
-:root {
-    --accent: #c75a00;
-    --muted: #666;
-    --bg: #faf7f3;
-    --card: #fff;
-    --maxw: 1100px;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5e9d7;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4b78c" opacity="0.1" width="100" height="100"/></svg>');
-    margin: 0;
-    padding: 20px;
-    color: #5c3d2e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5e9d7;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4b78c" opacity="0.1" width="100" height="100"/></svg>');
+            margin: 0;
+            padding: 20px;
+            color: #5c3d2e;
+        }
 
-.container {
-    max-width: var(--maxw);
-    width: 100%;
-    background-color: var(--card);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
-}
+        h2 {
+            text-align: center;
+            color: #8b4513;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+            border-bottom: 3px solid #d2691e;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
 
-h1 {
-    text-align: center;
-    color: #8b4513;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
-    border-bottom: 3px solid #d2691e;
-    padding-bottom: 10px;
-    font-weight: bold;
-}
+        /* Link de adicionar novo prato */
+        a[href="criar.php"] {
+            display: inline-block;
+            background: linear-gradient(135deg, #d2691e, #8b4513);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+        }
 
-h2 {
-    text-align: center;
-    color: #8b4513;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
-    border-bottom: 3px solid #d2691e;
-    padding-bottom: 10px;
-    font-weight: bold;
-}
+        a[href="criar.php"]:hover {
+            background: linear-gradient(135deg, #8b4513, #5c3d2e);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
+        }
+        /*Voltar ----- precisa arrumar*/
+        a[href="../html/index.php"] {
+            display: inline-block;
+            background: linear-gradient(135deg, #d2691e, #8b4513);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+        }
 
-/* Link de adicionar novo funcionário */
-a[href="add.php"] {
-    display: inline-block;
-    background: linear-gradient(135deg, #d2691e, #8b4513);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
-}
+        a[href="../html/index.php"]:hover {
+            background: linear-gradient(135deg, #8b4513, #5c3d2e);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
+        }
 
-a[href="add.php"]:hover {
-    background: linear-gradient(135deg, #8b4513, #5c3d2e);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
-}
+        /* Tabela do cardápio */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-bottom: 30px;
+        }
 
-/* Tabela de funcionários */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
-    margin-bottom: 30px;
-}
+        /* Cabeçalho da tabela */
+        th {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: #f5e9d7;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+            border: none;
+        }
 
-/* Cabeçalho da tabela */
-th {
-    background: linear-gradient(135deg, #8b4513, #a0522d);
-    color: #f5e9d7;
-    padding: 20px 15px;
-    text-align: left;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.1em;
-    border: none;
-}
+        /* Linhas da tabela */
+        tr:nth-child(even) {
+            background-color: #faf3eb;
+        }
 
-/* Linhas da tabela */
-tr:nth-child(even) {
-    background-color: #faf3eb;
-}
+        tr:nth-child(odd) {
+            background-color: #fffaf0;
+        }
 
-tr:nth-child(odd) {
-    background-color: #fffaf0;
-}
+        tr:hover {
+            background-color: #f0e6d2;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
 
-tr:hover {
-    background-color: #f0e6d2;
-    transform: scale(1.01);
-    transition: all 0.2s ease;
-}
+        /* Células da tabela */
+        td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #e8d5b7;
+            color: #5c3d2e;
+            font-size: 1em;
+        }
 
-/* Células da tabela */
-td {
-    padding: 18px 15px;
-    border-bottom: 1px solid #e8d5b7;
-    color: #5c3d2e;
-    font-size: 1em;
-}
+        /* Estilo para o nome da bebida */
+        td:first-child {
+            font-weight: bold;
+            color: #8b4513;
+            font-size: 1.1em;
+        }
 
-/* Estilo para o ID */
-td:first-child {
-    font-weight: bold;
-    color: #8b4513;
-    font-size: 1.1em;
-}
+        /* Estilo para o preço */
+        td:nth-child(3) {
+            font-weight: bold;
+            color: #d2691e;
+            font-size: 1.1em;
+        }
 
-/* Estilo para o Nome */
-td:nth-child(2) {
-    font-weight: bold;
-    color: #8b4513;
-    font-size: 1.1em;
-}
+        /* Estilo para a categoria */
+        td:nth-child(4) {
+            font-style: italic;
+            color: #a0522d;
+        }
 
-/* Estilo para o Cargo */
-td:nth-child(3) {
-    font-style: italic;
-    color: #a0522d;
-}
+        /* Links de ação */
+        td:last-child a {
+            color: #8b4513;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin: 0 5px;
+            display: inline-block;
+        }
 
-/* Links de ação */
-td:last-child a {
-    color: #8b4513;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    margin: 0 5px;
-    display: inline-block;
-}
+        /* Link Editar */
+        td:last-child a:first-child {
+            background-color: #f0e6d2;
+            border: 2px solid #d2691e;
+        }
 
-/* Link Editar */
-td:last-child a:first-child {
-    background-color: #f0e6d2;
-    border: 2px solid #d2691e;
-}
+        td:last-child a:first-child:hover {
+            background-color: #d2691e;
+            color: white;
+        }
 
-td:last-child a:first-child:hover {
-    background-color: #d2691e;
-    color: white;
-}
+        /* Link Excluir */
+        td:last-child a:last-child {
+            background-color: #f8e8e8;
+            border: 2px solid #cd5c5c;
+            color: #cd5c5c;
+        }
 
-/* Link Excluir */
-td:last-child a:last-child {
-    background-color: #f8e8e8;
-    border: 2px solid #cd5c5c;
-    color: #cd5c5c;
-}
+        td:last-child a:last-child:hover {
+            background-color: #cd5c5c;
+            color: white;
+        }
 
-td:last-child a:last-child:hover {
-    background-color: #cd5c5c;
-    color: white;
-}
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            td:last-child a {
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
+        }
 
-/* Formulários */
-form {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
-}
+        /* Animação de entrada */
+        tr {
+            animation: fadeIn 0.5s ease-in-out;
+        }
 
-input,
-button {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #e8d5b7;
-    border-radius: 4px;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-button {
-    background: linear-gradient(135deg, #d2691e, #8b4513);
-    color: white;
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #8b4513, #5c3d2e);
-    transform: translateY(-2px);
-}
-
-.back-link {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.back-link a {
-    color: #8b4513;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #f0e6d2;
-    border: 2px solid #d2691e;
-    transition: all 0.3s ease;
-}
-
-.back-link a:hover {
-    background-color: #d2691e;
-    color: white;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    table {
-        font-size: 0.9em;
-    }
-
-    th,
-    td {
-        padding: 12px 8px;
-    }
-
-    h1,
-    h2 {
-        font-size: 2em;
-    }
-
-    td:last-child a {
-        padding: 6px 10px;
-        font-size: 0.9em;
-    }
-
-    form {
-        padding: 15px;
-    }
-}
-
-/* Animação de entrada */
-tr {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.add-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #d2691e, #8b4513);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
-}
-
-.add-button:hover {
-    background: linear-gradient(135deg, #8b4513, #5c3d2e);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
-}
+        /* Estilo para o preço com destaque */
+        td:nth-child(3)::before {
+            content: "💰 ";
+            font-size: 0.9em;
+        }

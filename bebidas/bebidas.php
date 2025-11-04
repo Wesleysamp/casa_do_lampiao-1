@@ -20,7 +20,7 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa do Lampião - Bebidas</title>
-    <link rel="stylesheet" href="../css/bebidas.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 

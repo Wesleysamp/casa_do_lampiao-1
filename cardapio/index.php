@@ -13,12 +13,12 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa do Lampião</title>
-    <link rel="stylesheet" href="../css/bebidas.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <h2>Pratos</h2>
 <a href="criar.php">Adicionar Novo Prato</a>
-
+<a href="../html/index.html">Voltar</a> <!--PRECISA ARRUMAR -->
 <table border="1" cellpadding="10">
     <tr>
         <th>Nome</th>
