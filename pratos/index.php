@@ -47,7 +47,7 @@ if (!$result) {
             <td><?= htmlspecialchars($row['categoria']) ?></td>
             <td>
                 <a href="editar.php?id=<?= $row['id'] ?>">Editar</a> | 
-                <a href="deletar.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja excluir este prato?')">Excluir</a>
+                <a class=excluir href="deletar.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja excluir este prato?')">Excluir</a>
             </td>
         </tr>
         <?php 

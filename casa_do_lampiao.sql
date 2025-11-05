@@ -146,17 +146,6 @@ CREATE TABLE itens_bebida (
     FOREIGN KEY (bebida_id) REFERENCES bebidas(id)
 );
 
--- Tabela avaliações
-CREATE TABLE avaliacoes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT,
-    pratos_id INT,
-    nota INT CHECK(nota BETWEEN 1 AND 5),
-    comentario TEXT,
-    data_avaliacao DATE,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (pratos_id) REFERENCES pratos(id)
-);
 
 -- Tabela usuários admin (para login no painel de administração)
 CREATE TABLE usuarios_admin (
