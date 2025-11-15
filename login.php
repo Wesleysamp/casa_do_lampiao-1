@@ -1,5 +1,5 @@
 <?php
- include ("../conexao/conexao.php");;
+ include ("../conexao/conexao.php");
 
  // Inicia a verificação do login
  if($_POST){
