@@ -113,28 +113,6 @@ CREATE TABLE clientes (
     data_cadastro DATE
 );
 
-
--- Tabela pedidos
-CREATE TABLE pedidos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT,
-    data_pedido DATETIME,
-    status ENUM('Em preparo', 'Pronto', 'Entregue', 'Cancelado') DEFAULT 'Em preparo',
-    total DECIMAL(10,2),
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
-);
-
--- Itens do pedido: alimentos
-CREATE TABLE itens_pedido (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    pedido_id INT,
-    pratos_id INT,
-    quantidade INT,
-    preco_unitario DECIMAL(10,2),
-    FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
-    FOREIGN KEY (pratos_id) REFERENCES pratos(id)
-);
-
 -- Itens do pedido: bebidas
 CREATE TABLE itens_bebida (
     id INT PRIMARY KEY AUTO_INCREMENT,

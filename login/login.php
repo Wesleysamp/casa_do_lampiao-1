@@ -1,0 +1,47 @@
+<?php
+ include('../conn/connect.php');
+
+ // Inicia a verificação do login
+ if($_POST){
+
+    // 🔹 Nova lógica: o campo "login" será tratado como "email",
+    //    porque na tabela usuarios_admin não existe campo login.
+    $email = $_POST['login'];
+
+    // 🔹 Senha continua usando MD5 conforme solicitado.
+    $senha = md5($_POST['senha']);
+
+    // 🔹 Consulta adaptada: tabela correta = usuarios_admin
+    //    Campos corretos = email e senha
+    $loginRes = $conn->query("
+        SELECT * FROM usuarios_admin 
+        WHERE email = '$email' AND senha = '$senha'
+    ");
+
+    $rowLogin = $loginRes->fetch_assoc();
+    $numRow = $loginRes->num_rows;
+
+    // Se sessão não existir, inicia uma nova
+    if(!isset($_SESSION)) {
+        $sessaoAntiga = session_name('chulettaaa');
+        session_start();
+        $session_name_new = session_name();
+    }
+
+    if($numRow > 0){
+
+        // 🔹 Agora salvamos no session os nomes corretos:
+        $_SESSION['login_usuario'] = $email;
+        $_SESSION['nome_usuario'] = $rowLogin['nome'];
+        $_SESSION['nome_da_sessao'] = session_name();
+
+        // 🔹 Antes existia "nivel", agora não existe mais.
+        //    Como só existe admin, redireciona direto:
+        echo "<script>window.open('index.php','_self')</script>";
+    }
+    else {
+        // 🔹 Corrigido erro: "invasor .php" tinha um espaço.
+        echo "<script>window.open('invasor.php','_self')</script>";
+    }
+ }
+?>
