@@ -27,12 +27,12 @@
      
     <button class="tab-btn" data-target="pedidos">Pedidos</button>
     <button class="tab-btn" data-target="admin">Login</button>
-    <button class="tab-btn" data-target="admin">Cadastro</button>
+    <!-- <button class="tab-btn" data-target="admin">Cadastro</button> -->
   </nav>
 
   <div class="container">
     <section class="cards-section">
-      <h2>Nossos Serviços</h2>
+      <h2>Nossas Opções</h2>
       <div class="cards-container">
         <div class="card" onclick="window.location.href='../pratos/index.php'">
           <div class="card-image" style="background-image: url('https://i.pinimg.com/736x/d4/3e/0f/d43e0f98e91801c0c5484e2c9c8c8384.jpg')"></div>
