@@ -54,36 +54,83 @@ h2 {
   }
 
   /* ===== HEADER ===== */
-  .site-header {
+.site-header {
     background-color: var(--accent);
     color: white;
-    text-align: center;
     padding: 5px 0;
     position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     width: 100%;
-  }
+}
 
-.login {
+/* Linha do header */
+.header-buttons {
     display: flex;
-    justify-content: right;
-    align-items: end;
-  }
-
-  .cadastro {
-    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
     
+}
+.cadastro-btn{
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    }
+
+.login-btn{
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  
+}
+  .login-btn:hover {
+    background-color: var(--accent-dark);
+
   }
-  .restaurant-title {
+
+  .cadastro-btn:hover {
+    background-color: var(--accent-dark); 
+  
+  }
+
+/* CADASTRO → ESQUERDA */
+.cadastro {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* LOGIN → DIREITA */
+.login {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* TÍTULO → CENTRO */
+.restaurant-title {
+    margin: 0 auto;
+    text-align: center;
     font-size: 2rem;
     font-weight: bold;
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  
+
 
   /* ===== NAV ===== */
   nav.main {
