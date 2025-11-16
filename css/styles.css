@@ -220,3 +220,83 @@ body {
             content: "💰";
             font-size: 0.9em;
         }
+
+/* Título acima da caixa de login */
+.login-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #8b4513;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(139,69,19,0.3);
+}
+
+/* Caixa de login */
+.login-wrapper {
+    max-width: 450px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+}
+
+/* Título da caixa (Entrar) */
+.login-wrapper h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #8b4513;
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #8b4513;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #d4b78c;
+    background-color: #fffaf0;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #d2691e;
+    background-color: #faf0e0;
+}
+
+/* Botão Entrar */
+.primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #d2691e, #8b4513);
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.primary:hover {
+    background: linear-gradient(135deg, #8b4513, #5c3d2e);
+}
+
+/* Botão voltar (já existia no seu CSS — não alterei, só garanto que fica no topo) */
+.voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}

@@ -1,5 +1,6 @@
 <?php
- include ("../conexao/conexao.php");;
+    include ("conexao/conexao.php");
+
 
  // Inicia a verificação do login
  if($_POST){
@@ -45,3 +46,48 @@
     }
  }
 ?>
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Casa do Lampião</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Botão Voltar no topo -->
+    <a class="voltar" href="../cliente/index_cli.html">Voltar</a>
+
+    <!-- Título acima da caixa -->
+    <h1 class="login-title">Adicione suas informações</h1>
+
+    <main>
+        <section class="login-wrapper">
+            <h2>Entrar</h2>
+
+            <form action="login.php" method="post">
+
+                <div class="form-group">
+                    <label for="login">E-mail</label>
+                    <input type="email" id="login" name="login" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="primary">Entrar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
+
