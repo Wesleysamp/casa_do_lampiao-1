@@ -1,10 +1,5 @@
 <?php
-<<<<<<< HEAD
     include ("conexao/conexao.php");
-
-=======
- include ("../conexao/conexao.php");
->>>>>>> 163b43a62927d2f0576948f0d1a299e2da8fde71
 
  // Inicia a verificação do login
  if($_POST){
