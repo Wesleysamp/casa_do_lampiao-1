@@ -113,17 +113,6 @@ CREATE TABLE clientes (
     data_cadastro DATE
 );
 
--- Itens do pedido: bebidas
-CREATE TABLE itens_bebida (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    pedido_id INT,
-    bebida_id INT,
-    quantidade INT,
-    preco_unitario DECIMAL(10,2),
-    FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
-    FOREIGN KEY (bebida_id) REFERENCES bebidas(id)
-);
-
 
 -- Tabela usuários admin (para login no painel de administração)
 CREATE TABLE usuarios_admin (

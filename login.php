@@ -58,7 +58,7 @@
 <body>
 
     <!-- Botão Voltar no topo -->
-    <a class="voltar" href="../cliente/index_cli.html">Voltar</a>
+    <a class="voltar" href="index.html">Voltar</a>
 
     <!-- Título acima da caixa -->
     <h1 class="login-title">Adicione suas informações</h1>
