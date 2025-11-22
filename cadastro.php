@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 include("conexao/conexao.php");
 
 // Se o formulário foi enviado
@@ -100,7 +99,3 @@ if ($_POST) {
 
 </body>
 </html>
-=======
- include ("../conexao/conexao.php");
- ?>
->>>>>>> 163b43a62927d2f0576948f0d1a299e2da8fde71
