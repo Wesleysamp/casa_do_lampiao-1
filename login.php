@@ -24,7 +24,7 @@
 
     // Se sessão não existir, inicia uma nova
     if(!isset($_SESSION)) {
-        $sessaoAntiga = session_name('chulettaaa');
+        $sessaoAntiga = session_name('lampiao');
         session_start();
         $session_name_new = session_name();
     }
@@ -59,7 +59,7 @@
 <body>
 
     <!-- Botão Voltar no topo -->
-    <a class="voltar" href="index.html">Voltar</a>
+    <a class="voltar" href="index_inicio.html">Voltar</a>
 
     <!-- Título acima da caixa -->
     <h1 class="login-title">Adicione suas informações</h1>
