@@ -106,12 +106,35 @@ h2 {
     font-weight: 500;
     transition: background-color 0.3s ease; */
 }
+
+.logout-btn{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #c96c00;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+    /* display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease; */
+}
 .login-btn:hover {
   background-color: var(--accent-dark);
 
 }
 
 .cadastro-btn:hover {
+  background-color: var(--accent-dark); 
+  
+}
+
+.logout-btn:hover {
   background-color: var(--accent-dark); 
   
 }
@@ -126,6 +149,13 @@ h2 {
 
 /* LOGIN → DIREITA */
 .login {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logout {
     position: absolute;
     right: 10px;
     top: 50%;
