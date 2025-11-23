@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Data atual
+    // Data atual'
     $data_cadastro = date('Y-m-d');
 
     // 2. Insere no banco COM A SENHA E CPF
