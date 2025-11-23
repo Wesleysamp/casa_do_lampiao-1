@@ -1,7 +1,10 @@
 <?php
     include ("conexao/conexao.php");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 132f769e5da0ba0736ab7d50432edb4c7d8a96e3
  // Inicia a verificação do login
  if($_POST){
 
@@ -59,7 +62,7 @@
 <body>
 
     <!-- Botão Voltar no topo -->
-    <a class="voltar" href="../cliente/index_cli.html">Voltar</a>
+    <a class="voltar" href="index.html">Voltar</a>
 
     <!-- Título acima da caixa -->
     <h1 class="login-title">Adicione suas informações</h1>

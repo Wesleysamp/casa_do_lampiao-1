@@ -47,7 +47,7 @@ if ($_POST) {
 <body>
 
     <!-- Botão Voltar -->
-    <a class="voltar" href="../html/index_cli.html">Voltar</a>
+    <a class="voltar" href="index.html">Voltar</a>
 
     <!-- Título acima da caixa -->
     <h1 class="login-title">Crie sua conta</h1>
@@ -99,3 +99,7 @@ if ($_POST) {
 
 </body>
 </html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 132f769e5da0ba0736ab7d50432edb4c7d8a96e3
