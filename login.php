@@ -1,10 +1,7 @@
 <?php
     include ("conexao/conexao.php");
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 132f769e5da0ba0736ab7d50432edb4c7d8a96e3
  // Inicia a verificação do login
  if($_POST){
 
