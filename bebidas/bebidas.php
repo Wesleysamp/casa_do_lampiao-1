@@ -27,7 +27,7 @@ if (!$result) {
 <body>
     <h2>Bebidas</h2>
     <a href="criar.php">Adicionar Nova Bebida</a>
-    <a class="voltar" href="../html/index.html">Voltar</a>
+    <a class="voltar" href="../html/index_adm.php">Voltar</a>
 
     <table border="1" cellpadding="10">
         <tr>

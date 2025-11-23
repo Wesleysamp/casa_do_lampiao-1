@@ -3,6 +3,8 @@ session_start();
 include("conexao/conexao.php");
 
 
+ // Inicia a verificação do login
+ if($_POST)
 $email_admin_master = "admin@casadolampiao.com";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,6 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
     $senha_hash = hash('sha256', $senha_digitada);
 
+    // Se sessão não existir, inicia uma nova
+    if(!isset($_SESSION)) {
+        $sessaoAntiga = session_name('lampiao');
+        session_start();
+        $session_name_new = session_name();
+    }
 
     if ($email === $email_admin_master) {
 
@@ -75,6 +83,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
+    <!-- Botão Voltar no topo -->
+    <a class="voltar" href="index_inicio.html">Voltar</a>
+
+    <!-- Título acima da caixa -->
+    <h1 class="login-title">Adicione suas informações</h1>
     <a class="voltar" href="index_inicio.html">Voltar</a>
     <h1 class="login-title">Acesse sua conta</h1>
 

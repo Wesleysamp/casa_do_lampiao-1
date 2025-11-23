@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <a class="voltar" href="index.html">Voltar</a>
+    <a class="voltar" href="index_inicio.html">Voltar</a>
     <h1 class="login-title">Crie sua conta</h1>
 
     <main>
