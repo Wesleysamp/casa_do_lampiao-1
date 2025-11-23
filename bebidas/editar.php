@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Redireciona para a lista de bebidas (ajuste o link se necessário, ex: bebidas.php ou index.php)
-        header("Location: index.php"); 
+        header("Location: bebidas.php"); 
         exit;
     } else {
         echo "<script>alert('Erro ao atualizar: " . $conn->error . "');</script>";
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
 
         <div class="btn-group">
-            <a href="index.php" class="btn-form btn-cancel">
+            <a href="bebidas.php" class="btn-form btn-cancel">
                  Cancelar
             </a>
 
