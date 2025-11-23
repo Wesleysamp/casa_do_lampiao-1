@@ -10,26 +10,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST['preco'];
     $categoria_id = $_POST['categoria_id'];
 
-    // --- LÓGICA DE UPLOAD DE IMAGEM ---
-    $nome_final_imagem = ""; // Começa vazio caso não suba imagem
+ 
+    $nome_final_imagem = ""; 
 
     if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == 0) {
         $arquivo = $_FILES['arquivo'];
-        $pasta_destino = "../img/"; // Pasta onde a foto será salva
+        $pasta_destino = "../img/"; 
         $nome_arquivo = $arquivo['name'];
 
-        // Tenta mover o arquivo para a pasta
+        
         if (move_uploaded_file($arquivo['tmp_name'], $pasta_destino . $nome_arquivo)) {
             $nome_final_imagem = $nome_arquivo;
         }
     }
 
-    // Insere na tabela BEBIDAS (incluindo a imagem)
+    // Insere na tabela BEBIDAS 
     $sql = "INSERT INTO bebidas (nome, descricao, preco, imagem, categoria_id)
             VALUES ('$nome', '$descricao', '$preco', '$nome_final_imagem', '$categoria_id')";
 
     if (mysqli_query($conn, $sql)) {
-        // Redireciona para a lista de bebidas (ajuste se seu arquivo for index.php)
+        
         header("Location: bebidas.php"); 
         exit();
     } else {

@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = $_POST['telefone'];
     $cpf = $_POST['cpf'];
 
-    // 1. Pega a senha e Criptografa (SHA-256)
+    // Pega a senha e Criptografa
     $senha_digitada = $_POST['senha'];
     $senha_hash = hash('sha256', $senha_digitada);
 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Data atual
     $data_cadastro = date('Y-m-d');
 
-    // 2. Insere no banco COM A SENHA E CPF
+    // Insere no banco COM A SENHA E CPF
     $sql = "INSERT INTO clientes (nome, email, telefone, cpf, data_cadastro, senha)
             VALUES ('$nome', '$email', '$telefone', '$cpf', '$data_cadastro', '$senha_hash')";
 

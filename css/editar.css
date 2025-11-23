@@ -1,8 +1,4 @@
-/* =========================================
-   ESTILO DA PÁGINA DE EDIÇÃO (Casa do Lampião)
-   ========================================= */
-
-/* Container do Formulário (Baseado na .login-wrapper e .card) */
+/* Container do Formulário */
 .form-container {
     max-width: 600px;
     margin: 40px auto;
@@ -27,7 +23,7 @@
     /* Remove sombra para ficar mais limpo no form */
 }
 
-/* Labels (Rótulos) */
+/* Labels(Rótulos) */
 .form-container label {
     display: block;
     color: #8b4513;
@@ -46,15 +42,12 @@
     padding: 12px 15px;
     border-radius: 10px;
     border: 2px solid #d4b78c;
-    /* Borda bege escura */
     background-color: #fffaf0;
-    /* Fundo creme igual ao login */
     color: #5c3d2e;
     font-size: 1em;
     outline: none;
     transition: all 0.3s ease;
     box-sizing: border-box;
-    /* Garante que não estoure a largura */
     margin-bottom: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -69,13 +62,13 @@
     box-shadow: 0 0 8px rgba(210, 105, 30, 0.2);
 }
 
-/* Área de Texto (Textarea) */
+/* Área de Texto  */
 .form-container textarea {
     min-height: 120px;
     resize: vertical;
 }
 
-/* --- ESTILO DO UPLOAD DE IMAGEM --- */
+/* Estilo upload de imagem */
 .file-input-wrapper {
     border: 2px dashed #d4b78c;
     background-color: #faf3eb;
@@ -118,7 +111,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --- BOTÕES --- */
+
 .btn-group {
     display: flex;
     gap: 15px;
@@ -142,7 +135,7 @@
     display: inline-block;
 }
 
-/* Botão Salvar (Verde/Laranja) */
+/* Botão Salvar */
 .btn-save {
     background: linear-gradient(135deg, #d2691e, #8b4513);
     color: white;
@@ -155,7 +148,7 @@
     box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
 }
 
-/* Botão Cancelar (Cinza/Neutro) */
+/* Botão Cancelar */
 .btn-cancel {
     background-color: #e0e0e0;
     color: #5c3d2e;
@@ -192,13 +185,11 @@
     margin-top: 30px;
 }
 
-/* Estilo Base (Cópia exata das classes .voltar e a[href="criar.php"]) */
+/* Estilo Base */
 .btn-form {
     flex: 1;
-    /* Faz os dois ocuparem o mesmo tamanho */
     padding: 12px 25px;
     border-radius: 25px;
-    /* Borda bem redonda igual ao site */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -212,10 +203,10 @@
     font-size: 1em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: none;
-    /* Remove borda padrão do button */
+    
 }
 
-/* --- BOTÃO SALVAR (Igual ao botão "Adicionar Novo Prato") --- */
+
 .btn-save {
     background: linear-gradient(135deg, #d2691e, #8b4513);
     color: white;
@@ -224,28 +215,19 @@
 
 .btn-save:hover {
     background: linear-gradient(135deg, #8b4513, #5c3d2e);
-    /* Fica mais escuro no hover */
     transform: translateY(-2px);
-    /* Efeito de flutuar */
     box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
 }
 
-/* --- BOTÃO CANCELAR --- */
-/* Fiz uma variação usando as cores do seu tema para não confundir com o Salvar,
-   mas mantendo a mesma geometria e fonte */
 .btn-cancel {
     background-color: #fffaf0;
-    /* Fundo creme (mesmo do input) */
     color: #8b4513;
-    /* Texto marrom */
     border: 2px solid #d2691e;
-    /* Borda laranja igual aos títulos */
     box-shadow: none;
 }
 
 .btn-cancel:hover {
     background-color: #d2691e;
-    /* Vira laranja ao passar o mouse */
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
@@ -255,7 +237,6 @@
 @media (max-width: 600px) {
     .btn-group {
         flex-direction: column-reverse;
-        /* Botão Salvar fica em cima no celular */
     }
 
     .btn-form {

@@ -41,10 +41,8 @@ body {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
         }
-        /* a[href="deletar.php"]{
-        display: flex;
-        
-        float: inline-end ; */
+
+
         .excluir {
             display: flex;
             float: right;
@@ -244,7 +242,7 @@ body {
     box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
 }
 
-/* Título da caixa (Entrar) */
+/* Título da caixa  */
 .login-wrapper h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -294,7 +292,7 @@ body {
     background: linear-gradient(135deg, #8b4513, #5c3d2e);
 }
 
-/* Botão voltar (já existia no seu CSS — não alterei, só garanto que fica no topo) */
+/* Botão voltar  */
 .voltar {
     position: absolute;
     top: 20px;

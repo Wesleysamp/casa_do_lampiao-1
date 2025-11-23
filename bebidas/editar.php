@@ -3,12 +3,12 @@ include ("../conexao/conexao.php");
 
 $id = $_GET['id'];
 
-// Busca os dados atuais da BEBIDA (tabela bebidas)
+// Busca os dados atuais da BEBIDA 
 $sql_busca = "SELECT * FROM bebidas WHERE id=$id";
 $result_busca = $conn->query($sql_busca);
 $bebida = $result_busca->fetch_assoc();
 
-// Busca categorias de bebidas para o select (tabela categorias_bebidas)
+// Busca categorias de bebidas para o select 
 $categorias = $conn->query("SELECT * FROM categorias_bebidas");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST['preco'];
     $categoria_id = $_POST['categoria_id'];
     
-    // Lógica de Upload
+
     $nome_final_imagem = $_POST['imagem_atual'];
 
     if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == 0) {
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Update no Banco (tabela bebidas)
+    // Update no Banco 
     $sql = "UPDATE bebidas SET 
             nome='$nome', 
             descricao='$descricao', 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
-        // Redireciona para a lista de bebidas (ajuste o link se necessário, ex: bebidas.php ou index.php)
+        // Redireciona para a lista de bebidas
         header("Location: bebidas.php"); 
         exit;
     } else {
