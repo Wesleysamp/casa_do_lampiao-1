@@ -1,35 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css">
   <title>Casa do Lampião</title>
+  <style>
+    .logout {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.logout-btn:hover {
+  background-color: var(--accent-dark); 
+  
+}
+.logout-btn{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #c96c00;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+    /* display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease; */
+}
+  </style>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    
 
     <div class="restaurant-title">
       <span>🏜️</span>
       <h4>Casa do Lampião</h4>
     </div>
+
+    <div class="logout">
+      <a
+       
+        
+       href="../logout.php" class="logout-btn">Logout
+      </a>
+      
+    </div>
     
   </header>
 
-  <nav class="main" id="main-nav">
-    <!-- <button href="../funcionarios/funcionarios.php" class="tab-btn" data-target="funcionarios">Funcionários</button> -->
-     
-    <button class="tab-btn" data-target="pedidos">Pedidos</button>
-    <button class="tab-btn" data-target="admin">Login</button>
-    <!-- <button class="tab-btn" data-target="admin">Cadastro</button> -->
-  </nav>
-
+ <!-- style="display: inline-block;
+        padding: 10px 20px;
+        background-color: #c96c00;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;" -->
   <div class="container">
     <section class="cards-section">
       <h2>Nossas Opções</h2>
