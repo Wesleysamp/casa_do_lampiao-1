@@ -53,7 +53,6 @@ h2 {
     padding: 0 20px;
   }
 
-  /* ===== HEADER ===== */
 .site-header {
     background-color: var(--accent);
     color: white;
@@ -78,14 +77,6 @@ h2 {
   border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
-    /* display: inline-block;
-    background-color: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease; */
 
 }
 
@@ -97,14 +88,6 @@ h2 {
   border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
-    /* display: inline-block;
-    background-color: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease; */
 }
 
 .logout-btn{
@@ -115,14 +98,7 @@ h2 {
   border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
-    /* display: inline-block;
-    background-color: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease; */
+
 }
 .login-btn:hover {
   background-color: var(--accent-dark);
@@ -139,7 +115,7 @@ h2 {
   
 }
 
-/* CADASTRO → ESQUERDA */
+
 .cadastro {
     position: absolute;
     left: 10px;
@@ -147,7 +123,7 @@ h2 {
     transform: translateY(-50%);
 }
 
-/* LOGIN → DIREITA */
+
 .login {
     position: absolute;
     right: 10px;
@@ -162,7 +138,7 @@ h2 {
     transform: translateY(-50%);
 }
 
-/* TÍTULO → CENTRO */
+
 .restaurant-title {
     margin: 0 auto;
     text-align: center;
@@ -174,8 +150,6 @@ h2 {
 }
 
 
-
-  /* ===== NAV ===== */
   nav.main {
     background: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -210,22 +184,22 @@ h2 {
     background: var(--bg);
   }
 
-  /* ===== CARDS ===== */
+
   .cards-section {
     margin: 1% 0;
-    text-align: center; /* Centraliza o título e os cards */
+    text-align: center; 
   }
 
   .section-title {
     font-size: 1.8rem;
-    color: #fff; /* texto branco */
-    background-color: var(--accent); /* fundo laranja */
+    color: #fff; 
+    background-color: var(--accent); 
     display: inline-block;
     padding: 10px 25px;
-    border: 1px solid #000; /* borda preta fina */
+    border: 1px solid #000; 
     border-radius: 8px;
     text-align: center;
-    margin: 0 auto 25px auto; /* centraliza e dá espaçamento abaixo */
+    margin: 0 auto 25px auto; 
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
 
@@ -287,7 +261,7 @@ h2 {
     background-color: var(--accent-dark);
   }
 
-  /* ===== FOOTER ===== */
+  
   footer {
     background-color: var(--accent);
     color: white;

@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-
+            
             $_SESSION['id'] = $row['id'];
             $_SESSION['nome'] = $row['nome'];
             $_SESSION['tipo_usuario'] = 'admin';

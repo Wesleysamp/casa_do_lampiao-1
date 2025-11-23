@@ -70,7 +70,7 @@ INSERT INTO pratos (nome, descricao, preco, imagem, categoria_id) VALUES
 ('Bolo de Rolo', 'Camadas finas de massa com goiabada.', 9.00, 'bolo_rolo.jpg', 3),
 ('Pudim de Rapadura', 'Pudim feito com rapadura e leite de coco.', 10.00, 'pudim_rapadura.jpg', 3);
 
--- Tabela categorias_bebidas (nova tabela para categorias de bebidas)
+-- Tabela categorias_bebidas 
 CREATE TABLE categorias_bebidas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50)
@@ -114,12 +114,12 @@ CREATE TABLE clientes (
 );
 
 
--- Tabela usuários admin (para login no painel de administração)
+-- Tabela usuários admin 
 CREATE TABLE usuarios_admin (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     email VARCHAR(100) UNIQUE,
-    senha VARCHAR(255) -- Armazenar o hash da senha
+    senha VARCHAR(255)
 );
 
 INSERT INTO usuarios_admin (nome, email, senha) VALUES

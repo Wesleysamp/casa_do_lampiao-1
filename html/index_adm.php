@@ -24,14 +24,7 @@
   border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
-    /* display: inline-block;
-    background-color: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease; */
+
 }
   </style>
 </head>
@@ -56,13 +49,7 @@
     
   </header>
 
- <!-- style="display: inline-block;
-        padding: 10px 20px;
-        background-color: #c96c00;
-        color: white;
-        border-radius: 6px;
-        text-decoration: none;
-        cursor: pointer;" -->
+
   <div class="container">
     <section class="cards-section">
       <h2>Nossas Opções</h2>

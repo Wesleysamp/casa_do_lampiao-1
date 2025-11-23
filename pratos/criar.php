@@ -10,12 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST['preco'];
     $categoria_id = $_POST['categoria_id'];
 
-    // --- LÓGICA DE UPLOAD DE IMAGEM ---
+    
     $nome_final_imagem = ""; // Começa vazio caso não suba imagem
 
     if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == 0) {
         $arquivo = $_FILES['arquivo'];
-        $pasta_destino = "../img/"; // Certifique-se que essa pasta existe
+        $pasta_destino = "../img/"; 
         $nome_arquivo = $arquivo['name'];
 
         // Tenta mover o arquivo para a pasta
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Insere no banco (incluindo a coluna imagem)
+    // Insere no banco 
     $sql = "INSERT INTO pratos (nome, descricao, preco, imagem, categoria_id)
             VALUES ('$nome', '$descricao', '$preco', '$nome_final_imagem', '$categoria_id')";
 
