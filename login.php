@@ -24,12 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-            // Salva sessão
+
             $_SESSION['id'] = $row['id'];
             $_SESSION['nome'] = $row['nome'];
             $_SESSION['tipo_usuario'] = 'admin';
 
-            // Manda para index_adm
+            
             header("Location: html/index_adm.php");
             exit;
         } else {
@@ -38,9 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     } 
-    // ======================================================
-    // CENÁRIO 2: É UM CLIENTE COMUM?
-    // ======================================================
+
     else {
 
         // Verifica na tabela de CLIENTES
