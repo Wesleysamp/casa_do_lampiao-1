@@ -1,53 +1,69 @@
 <?php
-    include ("conexao/conexao.php");
+session_start();
+include("conexao/conexao.php");
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 132f769e5da0ba0736ab7d50432edb4c7d8a96e3
- // Inicia a verificação do login
- if($_POST){
+$email_admin_master = "admin@casadolampiao.com";
 
-    // 🔹 Nova lógica: o campo "login" será tratado como "email",
-    //    porque na tabela usuarios_admin não existe campo login.
-    $email = $_POST['login'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // 🔹 Senha continua usando MD5 conforme solicitado.
-    $senha = md5($_POST['senha']);
 
-    // 🔹 Consulta adaptada: tabela correta = usuarios_admin
-    //    Campos corretos = email e senha
-    $loginRes = $conn->query("
-        SELECT * FROM usuarios_admin 
-        WHERE email = '$email' AND senha = '$senha'
-    ");
+    $email = $conn->real_escape_string($_POST['email']);
+    $senha_digitada = $_POST['senha'];
 
-    $rowLogin = $loginRes->fetch_assoc();
-    $numRow = $loginRes->num_rows;
+  
+    $senha_hash = hash('sha256', $senha_digitada);
 
-    // Se sessão não existir, inicia uma nova
-    if(!isset($_SESSION)) {
-        $sessaoAntiga = session_name('chulettaaa');
-        session_start();
-        $session_name_new = session_name();
-    }
 
-    if($numRow > 0){
+    if ($email === $email_admin_master) {
 
-        // 🔹 Agora salvamos no session os nomes corretos:
-        $_SESSION['login_usuario'] = $email;
-        $_SESSION['nome_usuario'] = $rowLogin['nome'];
-        $_SESSION['nome_da_sessao'] = session_name();
+        // Verifica na tabela de ADMINS
+        $sql = "SELECT * FROM usuarios_admin WHERE email = '$email' AND senha = '$senha_hash'";
+        $result = $conn->query($sql);
 
-        // 🔹 Antes existia "nivel", agora não existe mais.
-        //    Como só existe admin, redireciona direto:
-        echo "<script>window.open('index.php','_self')</script>";
-    }
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            // Salva sessão
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['nome'] = $row['nome'];
+            $_SESSION['tipo_usuario'] = 'admin';
+
+            // Manda para index_adm
+            header("Location: html/index_adm.php");
+            exit;
+        } else {
+            echo "<script>alert('Senha de administrador incorreta!'); window.location='login.php';</script>";
+            exit;
+        }
+
+    } 
+    // ======================================================
+    // CENÁRIO 2: É UM CLIENTE COMUM?
+    // ======================================================
     else {
-        // 🔹 Corrigido erro: "invasor .php" tinha um espaço.
-        echo "<script>window.open('invasor.php','_self')</script>";
+
+        // Verifica na tabela de CLIENTES
+        $sql = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha_hash'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            // Salva sessão
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['nome'] = $row['nome'];
+            $_SESSION['tipo_usuario'] = 'cliente';
+
+            // Manda para index_cli
+            header("Location: cliente/index_cli.html");
+            exit;
+        } else {
+            echo "<script>alert('E-mail ou senha inválidos!'); window.location='login.php';</script>";
+            exit;
+        }
     }
- }
+}
 ?>
 
 <!doctype html>
@@ -61,11 +77,8 @@
 
 <body>
 
-    <!-- Botão Voltar no topo -->
-    <a class="voltar" href="index.html">Voltar</a>
-
-    <!-- Título acima da caixa -->
-    <h1 class="login-title">Adicione suas informações</h1>
+    <a class="voltar" href="index_inicio.html">Voltar</a>
+    <h1 class="login-title">Acesse sua conta</h1>
 
     <main>
         <section class="login-wrapper">
@@ -74,8 +87,8 @@
             <form action="login.php" method="post">
 
                 <div class="form-group">
-                    <label for="login">E-mail</label>
-                    <input type="email" id="login" name="login" placeholder="Digite seu e-mail" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
                 </div>
 
                 <div class="form-group">
@@ -88,9 +101,12 @@
                 </div>
 
             </form>
+
+            <p style="text-align: center; margin-top: 15px;">
+                Não tem conta? <a href="cadastro.php" style="color: #d2691e; font-weight: bold;">Cadastre-se</a>
+            </p>
         </section>
     </main>
 
 </body>
 </html>
-
