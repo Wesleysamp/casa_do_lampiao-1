@@ -1,7 +1,7 @@
 <?php
 include "../conexao/conexao.php";
 
-// Sua tabela já tem a coluna imagem, então o SQL é simples:
+
 $sql = "SELECT p.id, p.nome, p.descricao, p.preco, p.imagem, cat.nome AS categoria 
         FROM pratos p
         JOIN categorias cat ON p.categoria_id = cat.id";
@@ -18,18 +18,52 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="../css/styles.css">
 
     <style>
-        /* CSS DO MODAL */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); }
-        .modal-content { background-color: #fff; margin: 5% auto; padding: 0; border: 1px solid #888; width: 90%; max-width: 500px; position: relative; }
-        .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; right: 10px; top: 5px; cursor: pointer; z-index: 10; background: rgba(255,255,255,0.8); padding: 0 5px; border-radius: 5px; }
-        .modal-img { width: 100%; height: 300px; object-fit: cover; display: block; border-bottom: 1px solid #ccc; }
+
+               .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.7); }
+
+        .modal-content { 
+            background-color: #fff; 
+            margin: 5% auto; padding: 0; 
+            border: 1px solid #888; 
+            width: 90%; 
+            max-width: 500px; 
+            position: relative; }
+        .close-btn { color: #aaa; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+            position: absolute; 
+            right: 10px; 
+            top: 5px; 
+            cursor: pointer; 
+            z-index: 10;
+            background: rgba(255,255,255,0.8); 
+            padding: 0 5px; 
+            border-radius: 5px; }
+
+        .modal-img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: cover; 
+            display: block; 
+            border-bottom: 1px solid #ccc; }
+            
         .modal-text { padding: 20px; }
+
     </style>
 </head>
 
 <body>
     <h2>Pratos</h2>
-    <a class="voltar" href="../html/index.html">Voltar</a> 
+    <a class="voltar" href="../cliente/index_cli.html">Voltar</a> 
 
     <table border="1" cellpadding="10">
         <tr>
@@ -48,9 +82,6 @@ $result = $conn->query($sql);
                 $descJS = addslashes(str_replace(["\r", "\n"], " ", $row['descricao']));
                 $precoJS = number_format($row['preco'], 2, ',', '.');
                 
-                // AQUI ESTÁ A MÁGICA:
-                // O banco traz 'baiao.jpg'. O código adiciona '../img/' na frente.
-                // Se o campo estiver vazio, usa uma imagem cinza padrão.
                 $nomeArquivo = $row['imagem'];
                 if (!empty($nomeArquivo)) {
                     $caminhoImagem = "../img/" . $nomeArquivo;

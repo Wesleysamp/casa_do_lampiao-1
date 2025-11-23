@@ -1,11 +1,10 @@
 <?php
 include "../conexao/conexao.php";
 
-// Consulta na tabela bebidas
+
 $sql = "SELECT b.id, b.nome, b.descricao, b.preco, b.imagem, cat.nome AS categoria 
         FROM bebidas b
         JOIN categorias_bebidas cat ON b.categoria_id = cat.id"; 
-        // Notei no seu SQL que a tabela é 'categorias_bebidas', ajustei aqui.
 
 $result = $conn->query($sql);
 ?>
@@ -17,16 +16,49 @@ $result = $conn->query($sql);
     <title>Casa do Lampião | Bebidas</title>
     <link rel="stylesheet" href="../css/styles.css">
     <style>
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); }
-        .modal-content { background-color: #fff; margin: 5% auto; padding: 0; border: 1px solid #888; width: 90%; max-width: 500px; position: relative; }
-        .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; right: 10px; top: 5px; cursor: pointer; z-index: 10; background: rgba(255,255,255,0.8); padding: 0 5px; border-radius: 5px; }
-        .modal-img { width: 100%; height: 300px; object-fit: cover; display: block; border-bottom: 1px solid #ccc; }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.7); }
+
+        .modal-content { 
+            background-color: #fff; 
+            margin: 5% auto; padding: 0; 
+            border: 1px solid #888; 
+            width: 90%; 
+            max-width: 500px; 
+            position: relative; }
+        .close-btn { color: #aaa; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+            position: absolute; 
+            right: 10px; 
+            top: 5px; 
+            cursor: pointer; 
+            z-index: 10;
+            background: rgba(255,255,255,0.8); 
+            padding: 0 5px; 
+            border-radius: 5px; }
+
+        .modal-img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: cover; 
+            display: block; 
+            border-bottom: 1px solid #ccc; }
+
         .modal-text { padding: 20px; }
     </style>
 </head>
 <body>
     <h2>Bebidas</h2>
-    <a class="voltar" href="../html/index.html">Voltar</a> 
+    <a class="voltar" href="../cliente/index_cli.html">Voltar</a> 
 
     <table border="1" cellpadding="10">
         <tr>
