@@ -110,6 +110,8 @@ CREATE TABLE clientes (
     nome VARCHAR(100),
     email VARCHAR(100) UNIQUE,
     telefone VARCHAR(20),
+    cpf VARCHAR(20) UNIQUE,
+    senha VARCHAR(20),
     data_cadastro DATE
 );
 
